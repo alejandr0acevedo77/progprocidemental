@@ -1,209 +1,203 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css" />
-  <title>Restaurante</title>
+  <title>Restaurante - Panel Principal</title>
+  <style>
+    /* Pequeño ajuste para que los enlaces no cambien el color del texto interno */
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      width: 100%;
+    }
+    .card {
+      height: 100%;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
 
 <body>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <!-- Barra de Navegación -->
+  <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" style="color: black; font-size: 30px">VENECIA</a>
+      <a class="navbar-item has-text-weight-bold" style="font-size: 24px;">VENECIA</a>
     </div>
 
     <div class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item"> Home </a>
-
-        <a class="navbar-item"> Documentation </a>
-
+        <a class="navbar-item">Inicio</a>
+        <a class="navbar-item">Documentación</a>
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link"> More </a>
-
+          <a class="navbar-link">Más</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item"> About </a>
-            <a class="navbar-item is-selected"> Jobs </a>
-            <a class="navbar-item"> Contact </a>
+            <a class="navbar-item">Acerca de</a>
+            <a class="navbar-item">Soporte</a>
             <hr class="navbar-divider" />
-            <a class="navbar-item"> Report an issue </a>
+            <a class="navbar-item">Reportar un problema</a>
           </div>
         </div>
       </div>
     </div>
   </nav>
 
-  <div class="columns">
-    <div class="column">
-      <div class="card">
-        <div class="card-content">
-          <div class="media">
-            <a href="modulos/menu.html">
-              <div class="media-left">
-                <figure class="image is-128x128">
-                  <img src="https://cdn-icons-png.flaticon.com/128/1046/1046747.png" alt="imagen-menu" />
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-4">Menú</p>
-                <p class="subtitle is-6">
-                  Aquí encontrarás lo que necesitas en segundos, con una
-                  experiencia visual atractiva y fluida que hará que navegar sea
-                  tan fácil como emocionante. ¡Entra ahora y explora todo lo que
-                  tenemos preparado para ti!
-                </p>
-              </div>
-            </a>
+  <!-- Contenedor Principal con Margen -->
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-text-centered mb-6">Panel de Administración</h1>
+      
+      <!-- Un solo contenedor multi-línea para todas las tarjetas -->
+      <div class="columns is-multiline">
 
+        <!-- Módulo: Menú -->
+        <div class="column is-6">
+          <div class="card">
+            <div class="card-content">
+              <a href="menu.html" class="card-link">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-96x96">
+                      <img src="https://cdn-icons-png.flaticon.com/128/1046/1046747.png" alt="Icono Menú" />
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-4">Menú</p>
+                    <p class="subtitle is-6 has-text-grey">
+                      Gestiona la oferta gastronómica del restaurante. Añade platos, actualiza precios, define categorías y controla la disponibilidad del menú comercial.
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="column">
-      <div class="card">
-        <div class="card-content">
-          <div class="media">
-            <a href="modulos/inventario.html">
-              <div class="media-left">
-                <figure class="image is-128x128">
-                  <img src="https://cdn-icons-png.flaticon.com/128/10951/10951881.png" alt="Placeholder image" />
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-4">Inventario</p>
-                <p class="subtitle is-6">
-                  Un inventario inteligente, ágil y siempre actualizado. Aquí podrás
-                  visualizar existencias en tiempo real, organizar tus recursos
-                  y tomar decisiones rápidas con información clara y confiable.
-                </p>
-              </div>
-            </a>
-
+        <!-- Módulo: Inventario -->
+        <div class="column is-6">
+          <div class="card">
+            <div class="card-content">
+              <a href="inventario.html" class="card-link">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-96x96">
+                      <img src="https://cdn-icons-png.flaticon.com/128/10951/10951881.png" alt="Icono Inventario" />
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-4">Inventario</p>
+                    <p class="subtitle is-6 has-text-grey">
+                      Un inventario inteligente, ágil y siempre actualizado. Controla existencias de materia prima, alertas de stock mínimo y entrada/salida de insumos.
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-
-  <div class="columns">
-    <div class="column">
-      <div class="card">
-        <div class="card-content">
-          <div class="media">
-            <a href="modulos/contabilidad.html">
-              <div class="media-left">
-                <figure class="image is-128x128">
-                  <img src="https://cdn-icons-png.flaticon.com/128/1570/1570998.png" alt="Placeholder image" />
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-4">Contabilidad</p>
-                <p class="subtitle is-6">
-                  Aquí encontrarás lo que necesitas en segundos, con una
-                  experiencia visual atractiva y fluida que hará que navegar sea
-                  tan fácil como emocionante. ¡Entra ahora y explora todo lo que
-                  tenemos preparado para ti!
-                </p>
-              </div>
-            </a>
-
+        <!-- Módulo: Contabilidad -->
+        <div class="column is-6">
+          <div class="card">
+            <div class="card-content">
+              <a href="contabilidad.html" class="card-link">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-96x96">
+                      <img src="https://cdn-icons-png.flaticon.com/128/1570/1570998.png" alt="Icono Contabilidad" />
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-4">Contabilidad</p>
+                    <p class="subtitle is-6 has-text-grey">
+                      Monitorea el flujo de caja, arqueos diarios, balances de ingresos y egresos, e historial de facturación para mantener las finanzas bajo control.
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="column">
-      <div class="card">
-        <div class="card-content">
-          <div class="media">
-            <a href="modulos/pedidos.html">
-              <div class="media-left">
-                <figure class="image is-128x128">
-                  <img src="https://cdn-icons-png.flaticon.com/128/3500/3500833.png" alt="Placeholder image" />
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-4">Pedidos</p>
-                <p class="subtitle is-6">
-                  Un inventario inteligente, ágil y siempre actualizado. Aquí podrás
-                  visualizar existencias en tiempo real, organizar tus recursos
-                  y tomar decisiones rápidas con información clara y confiable.
-                </p>
-              </div>
-            </a>
-
+        <!-- Módulo: Pedidos -->
+        <div class="column is-6">
+          <div class="card">
+            <div class="card-content">
+              <a href="pedidos.html" class="card-link">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-96x96">
+                      <img src="https://cdn-icons-png.flaticon.com/128/3500/3500833.png" alt="Icono Pedidos" />
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-4">Pedidos</p>
+                    <p class="subtitle is-6 has-text-grey">
+                      Administra las órdenes activas del comedor, despachos para llevar o domicilios. Sigue el estado del pedido desde la cocina hasta la mesa.
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="columns">
-    <div class="column">
-      <div class="card">
-        <div class="card-content">
-          <div class="media">
-            <a href="modulos/usuarios.html">
-              <div class="media-left">
-                <figure class="image is-128x128">
-                  <img src="https://cdn-icons-png.flaticon.com/128/560/560277.png" alt="Placeholder image" />
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-4">Usuarios</p>
-                <p class="subtitle is-6">
-                  Aquí encontrarás lo que necesitas en segundos, con una
-                  experiencia visual atractiva y fluida que hará que navegar sea
-                  tan fácil como emocionante. ¡Entra ahora y explora todo lo que
-                  tenemos preparado para ti!
-                </p>
-              </div>
-            </a>
-
+        <!-- Módulo: Usuarios -->
+        <div class="column is-6">
+          <div class="card">
+            <div class="card-content">
+              <a href="usuarios.html" class="card-link">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-96x96">
+                      <img src="https://cdn-icons-png.flaticon.com/128/560/560277.png" alt="Icono Usuarios" />
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-4">Usuarios</p>
+                    <p class="subtitle is-6 has-text-grey">
+                      Administración de personal del restaurante. Configura perfiles de cajeros, meseros, cocineros y administradores junto con sus permisos de acceso.
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="column">
-      <div class="card">
-        <div class="card-content">
-          <div class="media">
-            <a href="modulos/quienes_somos.html">
-              <div class="media-left">
-                <figure class="image is-128x128">
-                  <img src="https://cdn-icons-png.flaticon.com/128/3061/3061341.png" alt="Placeholder image" />
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-4">¿Quienes somos?</p>
-                <p class="subtitle is-6">
-                  Un inventario inteligente, ágil y siempre actualizado. Aquí podrás
-                  visualizar existencias en tiempo real, organizar tus recursos
-                  y tomar decisiones rápidas con información clara y confiable.
-                </p>
-              </div>
-            </a>
-
+        <!-- Módulo: ¿Quiénes Somos? -->
+        <div class="column is-6">
+          <div class="card">
+            <div class="card-content">
+              <a href="quienes_somos.html" class="card-link">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-96x96">
+                      <img src="https://cdn-icons-png.flaticon.com/128/3061/3061341.png" alt="Icono Nosotros" />
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-4">¿Quiénes somos?</p>
+                    <p class="subtitle is-6 has-text-grey">
+                      Espacio corporativo de Venecia. Conoce la historia, misión, visión y los valores organizacionales que guían nuestro servicio de cara a la comunidad.
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
-  </div>
-
-
+  </section>
 </body>
 
 </html>
-
-<!-- 
-Menu
-Inventario
-Quienes somos
-Usuarios
-Pedido
-Contabilidad -->
