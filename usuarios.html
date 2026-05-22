@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo de Usuarios - Registro</title>
+    <style>
+        /* Estilos básicos para organizar el formulario */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .btn-submit {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 15px;
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <!-- Redirección de regreso al Index -->
+        <a href="index.html" class="back-link">&larr; Volver al Inicio</a>
+        
+        <h2>Registro de Nuevo Usuario</h2>
+        
+        <form action="#" method="POST">
+            
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Ej. Juan">
+            </div>
+
+            <div class="form-group">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required placeholder="Ej. Pérez">
+            </div>
+
+            <div class="form-group">
+                <label for="tipo_documento">Tipo de Documento:</label>
+                <select id="tipo_documento" name="tipo_documento" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="CC">Cédula de Ciudadanía</option>
+                    <option value="CE">Cédula de Extranjería</option>
+                    <option value="TI">Tarjeta de Identidad</option>
+                    <option value="PP">Pasaporte</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="numero_documento">Número de Documento:</label>
+                <input type="text" id="numero_documento" name="numero_documento" required placeholder="Ej. 12345678">
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required placeholder="Ej. 3001234567">
+            </div>
+
+            <div class="form-group">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required placeholder="usuario@correo.com">
+            </div>
+
+            <div class="form-group">
+                <label for="genero">Género:</label>
+                <select id="genero" name="genero" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Otro">Otro / Prefiero no decirlo</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="cargo">Cargo:</label>
+                <select id="cargo" name="cargo" required>
+                    <option value="">Seleccione el rol</option>
+                    <option value="Administrador">Administrador</option>
+                    <option value="Cajero">Cajero</option>
+                    <option value="Supervisor">Supervisor</option>
+                    <option value="Soporte">Soporte Técnico</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" required placeholder="Mínimo 8 caracteres">
+            </div>
+
+            <button type="submit" class="btn-submit">Registrar Usuario</button>
+        </form>
+    </div>
+
+</body>
+</html>

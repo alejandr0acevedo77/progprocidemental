@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css" />
+  <title>Módulo de Inventario - Restaurante Venecia</title>
+</head>
+
+<body>
+  <!-- Barra de Navegación del Módulo -->
+  <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item has-text-weight-bold" style="font-size: 24px;">VENECIA</a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <a href="../index.html" class="navbar-item">Panel Principal</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenedor Principal -->
+  <section class="section">
+    <div class="container">
+      
+      <!-- Botón de regreso al Index principal -->
+      <div class="mb-5">
+        <a href="../index.html" class="button is-link is-light">&larr; Volver al Inicio</a>
+      </div>
+
+      <div class="columns">
+        
+        <!-- COLUMNA 1: Formulario de Registro de Insumos/Productos -->
+        <div class="column is-5">
+          <div class="box">
+            <h2 class="title is-4 has-text-link">Registrar Nuevo Producto</h2>
+            
+            <form action="guardar_producto.php" method="POST">
+              
+              <!-- Fila 1: Código y Nombre -->
+              <div class="columns">
+                <div class="column">
+                  <div class="field">
+                    <label class="label">Código:</label>
+                    <div class="control">
+                      <input class="input" type="text" name="Codigo_Producto" required placeholder="Ej. ELEC-001" />
+                    </div>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="field">
+                    <label class="label">Nombre del Producto:</label>
+                    <div class="control">
+                      <input class="input" type="text" name="Nombre_Producto" required placeholder="Ej. Teclado Mecánico" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Fila 2: Cantidad y Precio -->
+              <div class="columns">
+                <div class="column">
+                  <div class="field">
+                    <label class="label">Cantidad:</label>
+                    <div class="control">
+                      <input class="input" type="number" name="Cantidad_Producto" min="0" placeholder="0" />
+                    </div>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="field">
+                    <label class="label">Precio Unitario ($):</label>
+                    <div class="control">
+                      <input class="input" type="number" step="0.01" name="Valor_Unitario" min="0" placeholder="0.00" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Fila 3: Marca y Ubicación -->
+              <div class="columns">
+                <div class="column">
+                  <div class="field">
+                    <label class="label">Marca:</label>
+                    <div class="control">
+                      <input class="input" type="text" name="Marca_Producto" placeholder="Ej. Logitech" />
+                    </div>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="field">
+                    <label class="label">Ubicación en Bodega:</label>
+                    <div class="control">
+                      <input class="input" type="text" name="Ubicacion_producto" placeholder="Ej. Estante B - Pasillo 1" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Campo: Categoría -->
+              <div class="field">
+                <label class="label">Categoría:</label>
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select name="Categoria_Productos">
+                      <option value="electronica">Electrónica</option>
+                      <option value="perifericos">Periféricos</option>
+                      <option value="monitores">Monitores</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Campo: Descripción -->
+              <div class="field">
+                <label class="label">Descripción:</label>
+                <div class="control">
+                  <textarea class="textarea" name="Descripcion_Producto" rows="3" placeholder="Detalles técnicos o especificaciones del producto..."></textarea>
+                </div>
+              </div>
+
+              <!-- Botón Guardar -->
+              <div class="field mt-5">
+                <div class="control">
+                  <button type="submit" class="button is-link is-fullwidth">Guardar Producto</button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+        <!-- COLUMNA 2: Vista de Existencias actuales en la base de datos -->
+        <div class="column is-7">
+          <div class="box">
+            <h2 class="title is-4">Control de Stock Existente</h2>
+            <div class="table-container">
+              <table class="table is-striped is-hoverable is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Cod.</th>
+                    <th>Producto</th>
+                    <th>Marca</th>
+                    <th class="has-text-centered">Cant.</th>
+                    <th class="has-text-right">Precio U.</th>
+                    <th>Ubicación</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Producto de ejemplo 1 -->
+                  <tr>
+                    <td><span class="tag is-light">ELEC-001</span></td>
+                    <td><strong>Mouse Óptico Inalámbrico</strong></td>
+                    <td>Genius</td>
+                    <td class="has-text-centered">15</td>
+                    <td class="has-text-right">$45.000</td>
+                    <td>Estante A1</td>
+                  </tr>
+                  <!-- Producto de ejemplo 2 -->
+                  <tr>
+                    <td><span class="tag is-light">MON-024</span></td>
+                    <td><strong>Monitor Gamer 24" FHD</strong></td>
+                    <td>Samsung</td>
+                    <td class="has-text-centered has-text-danger has-text-weight-bold">2</td>
+                    <td class="has-text-right">$680.000</td>
+                    <td>Bodega Fondo</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</body>
+
+</html>

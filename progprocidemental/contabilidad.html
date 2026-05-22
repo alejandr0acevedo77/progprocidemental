@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css" />
+  <title>Módulo de Contabilidad - Restaurante Venecia</title>
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      
+      <!-- Botón de regreso al Index principal -->
+      <div class="mb-5">
+        <a href="../index.html" class="button is-link is-light">&larr; Volver al Inicio</a>
+      </div>
+
+      <div class="columns">
+        
+        <!-- COLUMNA 1: Formulario de Registro -->
+        <div class="column is-5">
+          <div class="box">
+            <h2 class="title is-4 has-text-link">Registrar Movimiento</h2>
+            
+            <form action="#" method="POST">
+              
+              <!-- Campo: Concepto -->
+              <div class="field">
+                <label class="label">Concepto / Descripción</label>
+                <div class="control">
+                  <input class="input" type="text" name="concepto" required placeholder="Ej. Venta de almuerzos del día o Pago de verduras" />
+                </div>
+              </div>
+
+              <!-- Campo: Tipo de Movimiento (Ingreso / Egreso) -->
+              <div class="field">
+                <label class="label">Tipo de Movimiento</label>
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select name="tipo_movimiento" required>
+                      <option value="">Seleccione una opción</option>
+                      <option value="ingreso">💰 Ingreso (+)</option>
+                      <option value="egreso">💸 Egreso (-)</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Campo: Monto / Valor -->
+              <div class="field">
+                <label class="label">Valor ($)</label>
+                <div class="control">
+                  <input class="input" type="number" name="valor" min="0" required placeholder="Ej. 150000" />
+                </div>
+              </div>
+
+              <!-- Campo: Fecha -->
+              <div class="field">
+                <label class="label">Fecha</label>
+                <div class="control">
+                  <input class="input" type="date" name="fecha" required />
+                </div>
+              </div>
+
+              <!-- Botón Guardar -->
+              <div class="field mt-5">
+                <div class="control">
+                  <button type="submit" class="button is-link is-fullwidth">Guardar Registro</button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+        <!-- COLUMNA 2: Historial y Balance -->
+        <div class="column is-7">
+          
+          <!-- Bloque de Resumen Financiero Rápido -->
+          <div class="level box has-background-light">
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Total Ingresos</p>
+                <p class="title is-5 has-text-success">+$450.000</p>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Total Egresos</p>
+                <p class="title is-5 has-text-danger">-$120.000</p>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Balance Caja</p>
+                <p class="title is-5 has-text-info">$330.000</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tabla de historial -->
+          <div class="box">
+            <h2 class="title is-4">Historial de Transacciones</h2>
+            <div class="table-container">
+              <table class="table is-striped is-hoverable is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Fecha</th>
+                    <th>Concepto</th>
+                    <th class="has-text-right">Ingreso</th>
+                    <th class="has-text-right">Egreso</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Ejemplo Ingreso -->
+                  <tr>
+                    <td>2026-05-22</td>
+                    <td>Venta de menús ejecutivos en mesa</td>
+                    <td class="has-text-right has-text-success">+$450.000</td>
+                    <td class="has-text-right has-text-grey-light">-</td>
+                  </tr>
+                  <!-- Ejemplo Egreso -->
+                  <tr>
+                    <td>2026-05-22</td>
+                    <td>Compra de carne e insumos de plaza</td>
+                    <td class="has-text-right has-text-grey-light">-</td>
+                    <td class="has-text-right has-text-danger">-$120.000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</body>
+
+</html>
